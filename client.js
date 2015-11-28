@@ -1,3 +1,7 @@
+/*global $, jQuery, localStorage, window, angular, alert, document, console, confirm, require */
+/*jshint unused:false */
+/*jshint plusplus: false, devel: true, nomen: true, indent: 4, maxerr: 50 */
+
 var PORT = 33333;
 var HOST = '127.0.0.1';
 
@@ -5,11 +9,23 @@ var dgram = require('dgram');
 var message = new Buffer('My KungFu is Good!');
 
 var client = dgram.createSocket('udp4');
-client.send(message, 0, message.length, PORT, HOST, function(err, bytes) {
-  if (err) {
-    throw err;
-  } else {
-    console.log('UDP message sent to ' + HOST + ':' + PORT);
-    client.close();
-  }
-});
+var runForTimes = 100,
+  time = 0,
+  interval = 1000;
+
+function sendUDPMessage() {
+  client.send(message, 0, message.length, PORT, HOST, function(err, bytes) {
+    if (err) {
+      throw err;
+    } else {
+      console.log('UDP message sent to ' + HOST + ':' + PORT + " " + new Date());
+      if (++time > runForTimes) {
+        client.close();
+      } else {
+        setTimeout(sendUDPMessage, interval);
+      }
+    }
+  });
+}
+
+sendUDPMessage();
