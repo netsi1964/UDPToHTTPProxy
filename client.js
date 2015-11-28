@@ -22,6 +22,7 @@ function sendUDPMessage() {
       throw err;
     } else {
       if (++time > runForTimes) {
+        console.log("Ending client");
         client.close();
       } else {
         setTimeout(sendUDPMessage, interval);
@@ -31,3 +32,4 @@ function sendUDPMessage() {
 }
 
 sendUDPMessage();
+console.log("Started client");
