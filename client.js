@@ -6,7 +6,7 @@ var PORT = 33333;
 var HOST = '127.0.0.1';
 
 var dgram = require('dgram');
-var message = new Buffer('My KungFu is Good!');
+
 
 var client = dgram.createSocket('udp4');
 var runForTimes = 100,
@@ -14,11 +14,13 @@ var runForTimes = 100,
   interval = 1000;
 
 function sendUDPMessage() {
+  var rawMessage = 'UDP message sent to ' + HOST + ':' + PORT + " " + new Date(),
+    message = new Buffer(rawMessage);
+  console.log(rawMessage);
   client.send(message, 0, message.length, PORT, HOST, function(err, bytes) {
     if (err) {
       throw err;
     } else {
-      console.log('UDP message sent to ' + HOST + ':' + PORT + " " + new Date());
       if (++time > runForTimes) {
         client.close();
       } else {
