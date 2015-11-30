@@ -40,13 +40,37 @@
       autoCenterMap = false,
       animation;
 
+    var planes = {
+      "default": "f-35",
+      "f-35": {
+        path: 'M21.593,52.299l-2.547,0l-1.129,-2.204c-0.655,2.489 -0.979,4.894 -1.284,8.01l-0.17,0l-9.527,-2.377l0,-3.123l5.534,-3.782l1.053,-2.428l-12.909,-3.282l0,-5.646c3.924,-2.659 7.849,-5.323 11.779,-8.036l1.39,-2.72l0.376,-8.863l0.735,-1.558l1.569,1.558l0.673,-1.558l1.505,-11.869c0.462,-1.361 1.033,-2.554 1.66,-3.689c0,0 1.235,2.328 1.698,3.689l1.504,11.869l0.673,1.558l1.569,-1.558l0.736,1.558l0.375,8.863l1.39,2.72c3.93,2.713 7.855,5.377 11.78,8.036l0,5.646l-12.91,3.282l1.053,2.428l5.534,3.782l0,3.123l-9.527,2.377l-0.17,0c-0.305,-3.116 -0.629,-5.521 -1.283,-8.01l-1.13,2.204Z',
+        fillColor: '#d0d0d0',
+        fillOpacity: 0.8,
+        scale: 1,
+        strokeColor: 'black',
+        strokeWeight: 1,
+        anchorPoint: new google.maps.Point(1500, -1300),
+        rotation: 45
+      }
+    }
+
+    function getPlane(planeID, colorInternal) {
+      var color = "rgba(" + (colorInternal.replace(/\./g, ",")) + ",1)";
+      var plane = (typeof planes[planeID] !== "undefined") ? planes[planeID] : planes[planes.default];
+      plane.fillColor = color;
+      return plane;
+    }
+
     function getFlightPosition(sURL, sPort) {
       sURL = (typeof sURL !== "undefined") ? sURL : "http://localhost";
       sPort = (typeof sPort !== "undefined") ? sPort : "8000";
-      $.getJSON(sURL + ":" + sPort, function(data) {
+      $.getJSON(sURL + ":" + sPort, function(planes) {
 
-        if (data.length > 0) {
-          var simData = data[0];
+        if (planes.length > 0) {
+          for (var plane = 0; plane < planes.length; plane++) {
+            // TODO: `dashboard`: Handle more than one plane
+          }
+          var simData = planes[0];
           var rawLatLng = {
             lat: parseFloat(simData.lat),
             lng: parseFloat(simData.long)
@@ -63,7 +87,7 @@
           mapsFlightPath = new google.maps.Polyline({
             path: flightPath,
             geodesic: true,
-            strokeColor: 'rgba(0,0,0,1)',
+            strokeColor: "black",
             strokeOpacity: 1,
             strokeWeight: 1
           });
@@ -84,7 +108,7 @@
 
           marker = new google.maps.Marker({
             position: myLatLng,
-            icon: f35,
+            icon: getPlane(simData.type, simData.color),
             map: map,
             animation: animation
           });
@@ -118,17 +142,6 @@
       };
       map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
-
-      f35 = {
-        path: 'M21.593,52.299l-2.547,0l-1.129,-2.204c-0.655,2.489 -0.979,4.894 -1.284,8.01l-0.17,0l-9.527,-2.377l0,-3.123l5.534,-3.782l1.053,-2.428l-12.909,-3.282l0,-5.646c3.924,-2.659 7.849,-5.323 11.779,-8.036l1.39,-2.72l0.376,-8.863l0.735,-1.558l1.569,1.558l0.673,-1.558l1.505,-11.869c0.462,-1.361 1.033,-2.554 1.66,-3.689c0,0 1.235,2.328 1.698,3.689l1.504,11.869l0.673,1.558l1.569,-1.558l0.736,1.558l0.375,8.863l1.39,2.72c3.93,2.713 7.855,5.377 11.78,8.036l0,5.646l-12.91,3.282l1.053,2.428l5.534,3.782l0,3.123l-9.527,2.377l-0.17,0c-0.305,-3.116 -0.629,-5.521 -1.283,-8.01l-1.13,2.204Z',
-        fillColor: '#d0d0d0',
-        fillOpacity: 0.8,
-        scale: 1,
-        strokeColor: 'black',
-        strokeWeight: 1,
-        anchorPoint: new google.maps.Point(1500, -1300),
-        rotation: 45
-      }
 
       getFlightPosition();
 
