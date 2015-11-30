@@ -11,6 +11,7 @@ var dgram = require("dgram"),
   latestData;
 
 var http = require("http");
+var responseCreator = require("./responseCreator.js");
 http.createServer(function(req, res) {
   res.writeHead(200, {
     "Content-Type": "application/json",
@@ -19,7 +20,7 @@ http.createServer(function(req, res) {
     "Access-Control-Allow-Methods": "GET",
     "Access-Control-Allow-Headers": "Content-Type"
   });
-  res.end(JSON.stringify(latestData));
+  res.end(responseCreator(latestData));
 }).listen(serverPort);
 
 console.log("HTTP server listening on port " + JSON.stringify(serverPort));
@@ -30,11 +31,7 @@ server.on("listening", function() {
 });
 
 server.on("message", function(message, remote) {
-  latestData = {
-    recieved: new Date(),
-    message: message.toString(),
-    remote: remote
-  };
+  latestData = message.toString();
   // console.log(latestData);
 
 });

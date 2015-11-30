@@ -45,13 +45,11 @@
       sPort = (typeof sPort !== "undefined") ? sPort : "8000";
       $.getJSON(sURL + ":" + sPort, function(data) {
 
-        if (data.message.length > 0) {
-          // lat,long,altitude
-          var aTemp = data.message.split(",");
-
+        if (data.length > 0) {
+          var simData = data[0];
           var rawLatLng = {
-            lat: parseFloat(aTemp[0]),
-            lng: parseFloat(aTemp[1])
+            lat: parseFloat(simData.lat),
+            lng: parseFloat(simData.long)
           };
           myLatLng = new google.maps.LatLng(rawLatLng);
 
