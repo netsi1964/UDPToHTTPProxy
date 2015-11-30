@@ -1,4 +1,1 @@
-
-## TODOs
-
-- `dashboard`: Handle more than one plane `dashboard.html` `:71`
+- `dashboard`: Handle more than one plane __TODOs__ `dashboard.html`
