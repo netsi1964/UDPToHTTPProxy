@@ -42,7 +42,7 @@
 
     function getFlightPosition(sURL, sPort) {
       sURL = (typeof sURL !== "undefined") ? sURL : "http://localhost";
-      sPort = (typeof sPort !== "undefined") ? sPort : "8080";
+      sPort = (typeof sPort !== "undefined") ? sPort : "8000";
       $.getJSON(sURL + ":" + sPort, function(data) {
 
         if (data.message.length > 0) {

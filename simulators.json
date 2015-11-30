@@ -1,0 +1,29 @@
+[{
+  "name": "Denmark",
+  "host": "127.0.0.1",
+  "simulators": [{
+    "name": "Sim 1",
+    "type": "F-35",
+    "color": "rgb(0,0,0)",
+    "port": 33333
+  }, {
+    "name": "Sim 2",
+    "type": "F-35",
+    "color": "blue",
+    "port": 44444
+  }]
+}, {
+  "name": "Lyon",
+  "host": "localhost",
+  "simulators": [{
+    "name": "Sim 1",
+    "type": "F-35",
+    "color": "rgb(0,0,0)",
+    "port": 7000
+  }, {
+    "name": "Sim 2",
+    "type": "F-35",
+    "color": "blue",
+    "port": 8000
+  }]
+}]
