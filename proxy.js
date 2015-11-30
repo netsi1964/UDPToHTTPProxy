@@ -1,3 +1,7 @@
+/*global $, jQuery, localStorage, window, angular, alert, document, console, confirm, require */
+/*jshint unused:false */
+/*jshint plusplus: false, devel: true, nomen: true, indent: 4, maxerr: 50 */
+
 var PORT = 33333;
 var HOST = '127.0.0.1';
 var serverPort = 8080;
