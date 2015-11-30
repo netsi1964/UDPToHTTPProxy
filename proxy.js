@@ -24,7 +24,6 @@ http.createServer(function(req, res) {
 
 console.log("HTTP server listening on port " + JSON.stringify(serverPort));
 
-
 server.on("listening", function() {
   var address = server.address();
   console.log("UDP Server listening on " + address.address + ":" + address.port);

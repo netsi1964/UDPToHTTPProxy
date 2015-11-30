@@ -35,8 +35,10 @@
       maxTrace = 10,
       f35,
       marker,
-      lastPosition = null,
-      drawFlightPath = false;
+      lastPosition,
+      drawFlightPath = false,
+      autoCenterMap = false,
+      animation;
 
     function getFlightPosition(sURL, sPort) {
       sURL = (typeof sURL !== "undefined") ? sURL : "http://localhost";
@@ -59,7 +61,6 @@
           flightPath.push(rawLatLng);
 
 
-          map.panTo(myLatLng, animate = true);
 
           mapsFlightPath = new google.maps.Polyline({
             path: flightPath,
@@ -74,23 +75,32 @@
           }
 
           if (marker) {
-            marker.setMap(null)
+            marker.setMap(null);
+            animation = null;
+          } else {
+            // First time running
+            animation = google.maps.Animation.DROP;
+            map.panTo(myLatLng);
           };
 
+
           marker = new google.maps.Marker({
-            position: map.getCenter(),
+            position: myLatLng,
             icon: f35,
             map: map,
-            animation: (lastPosition===null) ? google.maps.Animation.DROP : null
+            animation: animation
           });
 
           var point1 = (lastPosition) ? lastPosition : initPosition;
-          var point2 = lastPosition = map.getCenter();
+          var point2 = lastPosition = myLatLng;
           var heading = google.maps.geometry.spherical.computeHeading(point1, point2);
 
 
           marker.getIcon().rotation = heading;
-          marker.setPosition(map.getCenter());
+          // marker.setPosition(map.getCenter());
+          if (autoCenterMap) {
+            map.panTo(myLatLng, animate = true);
+          }
         }
       });
 
