@@ -25,14 +25,6 @@
     <div class="row">
       <h1>Flight monitor</h1>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Current position</h2>
-        <div class="pos"></div>
-      </div>
-
-    </div>
-
   </div>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="http://maps.google.com/maps/api/js"></script>
@@ -43,7 +35,8 @@
       maxTrace = 10,
       f35,
       marker,
-      lastPosition;
+      lastPosition = null,
+      drawFlightPath = false;
 
     function getFlightPosition(sURL, sPort) {
       sURL = (typeof sURL !== "undefined") ? sURL : "http://localhost";
@@ -59,57 +52,49 @@
             lng: parseFloat(aTemp[1])
           };
           myLatLng = new google.maps.LatLng(rawLatLng);
+
           if (flightPath.length > maxTrace) {
             flightPath.shift();
           }
           flightPath.push(rawLatLng);
+
 
           map.panTo(myLatLng, animate = true);
 
           mapsFlightPath = new google.maps.Polyline({
             path: flightPath,
             geodesic: true,
-            strokeColor: 'rgba(100,100,0,.5)',
+            strokeColor: 'rgba(0,0,0,1)',
             strokeOpacity: 1,
-            strokeWeight: 9
+            strokeWeight: 1
           });
-          mapsFlightPath.setMap(map);
+
+          if (drawFlightPath) {
+            mapsFlightPath.setMap(map);
+          }
 
           if (marker) {
             marker.setMap(null)
           };
-          f35 = {
-            path: 'M82.889,202.963l-9.988,0l-4.43,-8.641c-2.565,9.758 -3.838,19.193 -5.034,31.41l-0.667,0l-37.363,-9.32l0,-12.246l21.705,-14.835l4.128,-9.52l-50.626,-12.871l0,-22.141c15.39,-10.431 30.782,-20.879 46.194,-31.519l5.454,-10.666l1.471,-34.757l2.883,-6.11l6.154,6.11l2.638,-6.11l5.902,-46.546c1.814,-5.34 4.055,-10.016 6.514,-14.469c0,0 4.842,9.129 6.656,14.469l5.902,46.546l2.638,6.11l6.154,-6.11l2.883,6.11l1.472,34.757l5.453,10.666c15.412,10.64 30.804,21.088 46.195,31.519l0,22.141l-50.627,12.871l4.128,9.52l21.705,14.835l0,12.246l-37.363,9.32l-0.667,0c-1.196,-12.217 -2.469,-21.652 -5.034,-31.41l-4.43,8.641Z',
-            fillColor: '#d0d0d0',
-            fillOpacity: 0.8,
-            scale: 1,
-            strokeColor: 'black',
-            strokeWeight: 1,
-            anchorPoint: new google.maps.Point(1500, -1300),
-            rotation: 45
-          }
 
           marker = new google.maps.Marker({
             position: map.getCenter(),
             icon: f35,
-            map: map
+            map: map,
+            animation: (lastPosition===null) ? google.maps.Animation.DROP : null
           });
 
           var point1 = (lastPosition) ? lastPosition : initPosition;
           var point2 = lastPosition = map.getCenter();
-          var heading = google.maps.geometry.spherical.computeHeading(point1,point2);
+          var heading = google.maps.geometry.spherical.computeHeading(point1, point2);
 
 
           marker.getIcon().rotation = heading;
           marker.setPosition(map.getCenter());
-
-
-
-          $pos.html("<code>lat:" + rawLatLng.lat + ",<br>lng:" + rawLatLng.lng + "</code>");
         }
       });
 
-      setTimeout(getFlightPosition, 2000);
+      setTimeout(getFlightPosition, 1000);
     }
 
     var lat = -34;
@@ -126,10 +111,16 @@
       map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
-
-
-
-
+      f35 = {
+        path: 'M21.593,52.299l-2.547,0l-1.129,-2.204c-0.655,2.489 -0.979,4.894 -1.284,8.01l-0.17,0l-9.527,-2.377l0,-3.123l5.534,-3.782l1.053,-2.428l-12.909,-3.282l0,-5.646c3.924,-2.659 7.849,-5.323 11.779,-8.036l1.39,-2.72l0.376,-8.863l0.735,-1.558l1.569,1.558l0.673,-1.558l1.505,-11.869c0.462,-1.361 1.033,-2.554 1.66,-3.689c0,0 1.235,2.328 1.698,3.689l1.504,11.869l0.673,1.558l1.569,-1.558l0.736,1.558l0.375,8.863l1.39,2.72c3.93,2.713 7.855,5.377 11.78,8.036l0,5.646l-12.91,3.282l1.053,2.428l5.534,3.782l0,3.123l-9.527,2.377l-0.17,0c-0.305,-3.116 -0.629,-5.521 -1.283,-8.01l-1.13,2.204Z',
+        fillColor: '#d0d0d0',
+        fillOpacity: 0.8,
+        scale: 1,
+        strokeColor: 'black',
+        strokeWeight: 1,
+        anchorPoint: new google.maps.Point(1500, -1300),
+        rotation: 45
+      }
 
       getFlightPosition();
 
