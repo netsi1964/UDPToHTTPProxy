@@ -4,35 +4,38 @@
 
 var PORT = 33333;
 var HOST = '127.0.0.1';
-var serverPort = 8000;
+var serverPort = 8080;
 
-var dgram = require("dgram"),
-  server = dgram.createSocket("udp4"),
+var dgram = require('dgram'),
+  server = dgram.createSocket('udp4'),
   latestData;
 
-var http = require("http");
-var responseCreator = require("./responseCreator.js");
+var http = require('http');
+var responseCreator = require('./responseCreator.js');
+
+console.log(responseCreator);
+
 http.createServer(function(req, res) {
   res.writeHead(200, {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Credentials": true,
-    "Access-Control-Allow-Methods": "GET",
-    "Access-Control-Allow-Headers": "Content-Type"
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials': true,
+    'Access-Control-Allow-Methods': 'GET',
+    'Access-Control-Allow-Headers': 'Content-Type'
   });
   res.end(responseCreator(latestData));
 }).listen(serverPort);
 
-console.log("HTTP server listening on port " + JSON.stringify(serverPort));
+console.log('HTTP server listening on port ' + JSON.stringify(serverPort));
 
-server.on("listening", function() {
+server.on('listening', function() {
   var address = server.address();
-  console.log("UDP Server listening on " + address.address + ":" + address.port);
+  console.log('UDP Server listening on ' + address.address + ':' + address.port);
 });
 
-server.on("message", function(message, remote) {
+server.on('message', function(message, remote) {
   latestData = message.toString();
-  // console.log(latestData);
+  console.log(responseCreator(latestData));
 
 });
 

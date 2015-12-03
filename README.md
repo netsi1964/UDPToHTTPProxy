@@ -13,9 +13,10 @@ Here is the F-35 SVG vector drawing.
 * [Generate flight data](http://www.findlatitudeandlongitude.com/click-lat-lng-list/#.VlnNsN8ve_A)  
 * [Google Maps Custom marker](https://developers.google.com/maps/documentation/javascript/examples/marker-symbol-custom)
 * [Google Maps Marker options](https://developers.google.com/maps/documentation/javascript/reference#MarkerOptions)
+* [Tornado SVG](https://da.wikipedia.org/wiki/Panavia_Tornado#/media/File:Panavia_Tornado_IDS.svg) 
 
 
-## Internal file format
+## Internal file format (master path)
 ```
 id,country,city,type,sim,LAT,LONG,ALT,color;id,country,city,type,sim,LAT,LONG,ALT,color
 ```

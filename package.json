@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/netsi1964/UDPToHTTPProxy/issues"
   },
-  "homepage": "https://github.com/netsi1964/UDPToHTTPProxy#readme"
+  "homepage": "https://github.com/netsi1964/UDPToHTTPProxy#readme",
+  "dependencies": {
+    "lsof": "^0.1.0"
+  }
 }
