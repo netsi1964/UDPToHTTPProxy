@@ -5,8 +5,8 @@ An app which will fetch UDP data and exposes it on HTTP
 I have drawn a airplanes in SVG and will be using the path for drawing them on the map.
 The plane marker will automatically rotate according to the direction using Google Maps API.
 
-![F-35](https://raw.githubusercontent.com/netsi1964/UDPToHTTPProxy/master/planes/f35_min.svg)
-![Tornado](https://raw.githubusercontent.com/netsi1964/UDPToHTTPProxy/master/planes/tornado_min.svg)
+![F-35](https://cdn.rawgit.com/netsi1964/UDPToHTTPProxy/master/planes/f35_min.svg)
+![Tornado](https://cdn.rawgit.com/netsi1964/UDPToHTTPProxy/master/planes/tornado_min.svg)
 
 ## Inspiration
 * [Node js udp server and client](http://www.hacksparrow.com/node-js-udp-server-and-client-example.html)
