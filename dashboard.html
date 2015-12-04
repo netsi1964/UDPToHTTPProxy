@@ -45,6 +45,26 @@
 
     var planes = {
       "default": "1",
+      "1": { // b737
+        path: "M15.36 31.68l-2.13.18-3.5 1.03s-.18 1.33-.56 1.33c-.38 0-.37-.96-.37-.96s-1.7.25-2.58.57c-.55.2-.92.3-.92.3L.97 35.4s-.6-2.15 1.05-2.95c1.63-.8 12.85-7.06 12.85-7.06v-.32s-.9-.07-.87-.68c.04-.62-.02-3.86 0-3.86s.1-.7.42-.75c.32-.06 2.3 0 2.3 0s.32-.08.42.43c.1.5 0 4.17 0 4.17l2.17-1.62s.98-.32.97-1.74V8.84s1.18-8 2.76-7.97c1.58 0 2.93 7.97 2.93 7.97v12.2c0 1.42.96 1.74.96 1.74l2.18 1.62s-.1-3.66 0-4.17c.1-.5.42-.44.42-.44s1.97-.06 2.3 0c.32.04.4.74.4.74.03 0-.02 3.24 0 3.86.05.6-.85.68-.85.68v.3s11.22 6.28 12.85 7.07c1.63.8 1.05 2.96 1.05 2.96l-4.34-1.27s-.36-.1-.92-.3l-2.56-.86s0 .96-.37.96c-.38 0-.56-1.34-.56-1.34L33 31.55l-1.88-.08v1.22h-.66v-1.24l-4.5-.2V43c0 1.77-.4 4.64-.7 6.8-.16 1.02 7.7 5 7.45 5.15-.1.06 0 1.94 0 1.94l-8.07-2.16-1 .2-.16 1.14h-.44L23 54.86l-1.4-.15-8.07 2.17s.1-1.88 0-1.94c-.25-.14 7.6-4.13 7.46-5.15-.33-2.16-.72-5.03-.72-6.8-.02-3.03 0-11.7 0-11.7l-4.26.34v1.08h-.66v-1.02z",
+        fillColor: "#d0d0d0",
+        fillOpacity: 0.8,
+        scale: 1,
+        strokeColor: "black",
+        strokeWeight: 1,
+        anchorPoint: new google.maps.Point(1500, -1300),
+        rotation: 45
+      },
+      "4": { // A320
+        path: "M23.5 6.35S24.73.4 26.4.4c1.68.03 3.1 5.95 3.1 5.95s.02 10.8 0 12.3c0 1.5 1.03 1.85 1.03 1.85l2.93 1.7s-.1-3.87 0-4.4c.1-.54.45-.47.45-.47s2.1-.06 2.44 0c.34.05.42.8.44.8.02 0-.03 3.43 0 4.08.04.65-.9.73-.9.73v.33s13.75 7.27 15.48 8.1c1.73.85 1.1 4.4 1.1 4.4s-.52-1.26-1.1-1.52c-.57-.26-6-2.03-6-2.03s-.04 1.08-.45 1.04c-.85-.07.1-1.13-.5-1.34-.95-.34-4.93-1.55-4.93-1.55s0 1.02-.4 1.02-.58-1.42-.58-1.42l-2.16-.46H29.5s.02 9.8 0 13.03c0 1.87-.4 3.97-.74 6.25-.16 1.1 7.84 5.63 7.58 5.78-.1.06 0 2.05 0 2.05l-8.24-1.65s-.44 2.46-.97 2.46h-.77-.5c-.53 0-.97-2.45-.97-2.45l-8.25 1.66s.1-1.98 0-2.04c-.26-.15 7.75-4.7 7.6-5.78-.35-2.28-.75-4.38-.76-6.25-.03-3.22 0-13.04 0-13.04h-6.85l-2.15.45s-.18 1.42-.6 1.42c-.4 0-.38-1.02-.38-1.02s-3.98 1.2-4.92 1.55c-.6.2.34 1.27-.5 1.34-.42.04-.48-1.03-.48-1.03s-5.42 1.78-6 2.04c-.56.26-1.1 1.5-1.1 1.5s-.62-3.53 1.1-4.37c1.74-.84 15.5-8.1 15.5-8.1v-.34s-.94-.08-.9-.72c.03-.64-.03-4.08 0-4.08 0 0 .1-.74.43-.8.34-.05 2.43 0 2.43 0s.35-.06.45.47c.1.53 0 4.4 0 4.4l2.93-1.7s1.04-.34 1.03-1.85c-.02-1.5 0-12.3 0-12.3z",
+        fillColor: "#d0d0d0",
+        fillOpacity: 0.8,
+        scale: 1,
+        strokeColor: "black",
+        strokeWeight: 1,
+        anchorPoint: new google.maps.Point(1500, -1300),
+        rotation: 45
+      },
       "2": { // tornado
         path: "M23.93 56.94V57c0-.18-.03-.36-.04-.54-.14 0-.24-.1-.24-.23v-1.3c-.12 0-.12-.38 0-.38v-.3c0-.08.04-.14.1-.2l-.06-1.24-.18-3.24h-.23c-.86.02-1.93.15-2.37 0h-.16l-.1-.27-.1.16c-.22-1.08-.4-2.22-.52-3.4-.07.22-.04.38-.02.55l.44 3.35-3.8 1.26v.02l-4.6 1.52c-.07-1.16-.1-2.24-.05-3.3l2.2-3.68 5.37-7.45v-1.27l-.06-2.8-.07-.04L0 39.23c.5-4.04 1.22-5.24 1.55-5.4l14.54-6.7.15-.23.08.17-.08-.16 2.3-3.73c-.02 0-.04-.22-.04-1V21.1c-.2-.07-.22-1.22 0-1.27l-.02-1.76.18-1h2.28l.03 5.1h.2v-5.68-.64 6.3-6.3c-.06-.18-.02-.14-.02-1.14 0-.2 0-.47.02-.76v-.1c.06-1.37.2-3.42.36-5.07l.02-.13c0-.06.03-.1.04-.16 0-.22.02-.33.05-.53v-.1c.02-.03.02-.06.03-.1 0-.04.02-.07.03-.1l.02-.03V7.6l-.02.08.07-.55.2-1.53c.2-1.45 1.34-3.97 1.85-5.36l-.03.1.03-.1V.3l.06-.15.02-.08V0h.02v.07l.04.08.07.14V.23c0 .04.02.07.03.1l-.03-.1c.5 1.4 1.64 3.9 1.85 5.36l.2 1.53.07.55-.02-.07v.08c.02.02.04.05.04.1v.1l.02.1.06.53c0 .06.03.1.03.17l.04.12c.15 1.64.3 3.7.36 5.07v.1l.02.75c0 1 .04.96-.02 1.13v6.3-6.3 6.3h.2l.03-5.1 2.28.02.2 1-.02 1.75c.2.05.18 1.2 0 1.27l-.02 1.08c0 .77-.03 1-.03 1l2.3 3.73c-.05.06-.07.1-.1.17l.1-.16.15.23 14.54 6.72c.33.15 1.05 1.35 1.55 5.4L28.4 34.17l-.07.04c-.03.9-.04 1.83-.06 2.8v1.3l5.37 7.44 2.2 3.67c.07 1.07.03 2.15-.05 3.3l-4.6-1.52v.02l-3.8-1.27.44-3.34c.02-.16.05-.32-.02-.53-.13 1.17-.3 2.3-.53 3.4l-.1-.18-.1.26h-.16c-.44.15-1.5.02-2.36 0h-.23l-.18 3.25c0 .4-.03.8-.05 1.26.05.05.1.1.1.18v.3c.1 0 .1.4 0 .4v1.3c0 .12-.1.22-.24.22 0 .18-.03.36-.04.54v-.07z",
         fillColor: "#d0d0d0",
@@ -55,7 +75,7 @@
         anchorPoint: new google.maps.Point(1500, -1300),
         rotation: 45
       },
-      "1": { // f-35
+      "3": { // f-35
         path: "M21.593,52.299l-2.547,0l-1.129,-2.204c-0.655,2.489 -0.979,4.894 -1.284,8.01l-0.17,0l-9.527,-2.377l0,-3.123l5.534,-3.782l1.053,-2.428l-12.909,-3.282l0,-5.646c3.924,-2.659 7.849,-5.323 11.779,-8.036l1.39,-2.72l0.376,-8.863l0.735,-1.558l1.569,1.558l0.673,-1.558l1.505,-11.869c0.462,-1.361 1.033,-2.554 1.66,-3.689c0,0 1.235,2.328 1.698,3.689l1.504,11.869l0.673,1.558l1.569,-1.558l0.736,1.558l0.375,8.863l1.39,2.72c3.93,2.713 7.855,5.377 11.78,8.036l0,5.646l-12.91,3.282l1.053,2.428l5.534,3.782l0,3.123l-9.527,2.377l-0.17,0c-0.305,-3.116 -0.629,-5.521 -1.283,-8.01l-1.13,2.204Z",
         fillColor: "#d0d0d0",
         fillOpacity: 0.8,
@@ -124,7 +144,7 @@
 
             for (var plane = 0; plane < planes.length; plane++) {
               currentSimulator = planes[plane];
-
+console.log(currentSimulator)
 
               if (currentSimulator.id === "") {
                 console.log("Seems that data is not valid", currentSimulator);
@@ -226,7 +246,86 @@
         scalePlanes();
       })
 
+      var redCoords = [{
+        lat: 25.774,
+        lng: -80.190
+      }, {
+        lat: 18.466,
+        lng: -66.118
+      }, {
+        lat: 32.321,
+        lng: -64.757
+      }];
 
+      // Construct a draggable red triangle with geodesic set to true.
+      var pol = new google.maps.Polygon({
+        map: map,
+        paths: redCoords,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35,
+        draggable: true,
+        geodesic: false
+      });
+      var radarLine;
+      google.maps.event.addDomListener(pol, 'drag', function() {
+        var p1 = pol.getPath().j[0]
+        var latlng = flightPaths[1][0];
+        var drawToPlane = [{
+          lat: p1.lat(),
+          lng: p1.lng()
+        }, {
+          lat: latlng.lat,
+          lng: latlng.lng
+        }];
+
+        if (radarLine) {
+          radarLine.setMap(null);
+        }
+
+        radarLine = new google.maps.Polyline({
+          path: drawToPlane,
+          geodesic: false,
+          strokeColor: "black",
+          strokeOpacity: 1,
+          strokeWeight: 1
+        });
+        radarLine.setMap(map);
+
+        //
+        // var boxText = document.createElement("div");
+    		// boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;";
+    		// boxText.innerHTML = "City Hall, Sechelt<br>British Columbia<br>Canada";
+        //
+    		// var myOptions = {
+    		// 	 content: boxText
+    		// 	,disableAutoPan: false
+    		// 	,maxWidth: 0
+    		// 	,pixelOffset: new google.maps.Size(-140, 0)
+    		// 	,zIndex: null
+    		// 	,boxStyle: {
+    		// 	  background: "url('tipbox.gif') no-repeat"
+    		// 	  ,opacity: 0.75
+    		// 	  ,width: "280px"
+    		// 	 }
+    		// 	,closeBoxMargin: "10px 2px 2px 2px"
+    		// 	,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+    		// 	,infoBoxClearance: new google.maps.Size(1, 1)
+    		// 	,isHidden: false
+    		// 	,pane: "floatPane"
+    		// 	,enableEventPropagation: false
+    		// };
+        //
+    		// google.maps.event.addListener(marker, "click", function (e) {
+    		// 	ib.open(theMap, this);
+    		// });
+        //
+    		// var ib = new InfoBox(myOptions);
+        //
+    		// ib.open(theMap, marker);
+      });
 
     }
     google.maps.event.addDomListener(window, 'load', initializeMap);
@@ -235,71 +334,52 @@
   <!-- UNDER CONSTRUNCTION START -->
   <div id="banner"><a href="">Under construction</a></div>
   <style type="text/css">
-  /* RELATED TO UNDER CONSTRUCTION ONLY */
-  #banner{
-        height: 149px;
-  			width: 149px;
-  			overflow:hidden;
-  			padding: 0;
-  			margin: 0;
-    position: fixed;
-    right: 0px;
-    top: 0px;
-  }
-  #banner a{
+    /* RELATED TO UNDER CONSTRUCTION ONLY */
 
-  	display: block;
-  	width: 230px;
-  	font-size: 14px;
-  	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT",
-  		"Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma,
-  		Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
-  	background-color: #333;
-  	color: #FFF;
-  	word-spacing: 2px;
-  	text-decoration: none;
-  	padding: 5px 15px 5px 25px;
+    #banner {
+      height: 149px;
+      width: 149px;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
+      position: fixed;
+      right: 0px;
+      top: 0px;
+    }
 
-  	position:relative;
-  	left: 20px;
-  	top: -37px;
-  	text-align: center;
-
-  	-moz-transform-origin: 0 0 ;
-  	-moz-transform:rotate(45deg);
-  	-moz-box-shadow:    1px 1px 5px 1px #666;
-
-  	-webkit-transform-origin: 0 0 ;
-  	-webkit-transform:rotate(45deg);
-  	-webkit-box-shadow: 1px 1px 5px 1px #666;
-
-  	-ms-transform-origin: 0 0 ;
-  	-ms-transform:rotate(45deg);
-  	-ms-box-shadow: 1px 1px 5px 1px #666;
-
-  	transform-origin: 0 0 ;
-  	transform:rotate(45deg);
-  	box-shadow: 1px 1px 5px 1px #666;
-
-  	background-image: linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-  	background-image: -o-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-  	background-image: -moz-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-  	background-image: -webkit-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-  	background-image: -ms-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-
-  	background-image: -webkit-gradient(
-  		linear,
-  		left bottom,
-  		left top,
-  		color-stop(0.03, #000000),
-  		color-stop(0.05, #666666),
-  		color-stop(0.07, #000000),
-  		color-stop(0.93, #000000),
-  		color-stop(0.95, #666666),
-  		color-stop(0.97, #000000)
-  	);
-
-  }
+    #banner a {
+      display: block;
+      width: 230px;
+      font-size: 14px;
+      font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
+      background-color: #333;
+      color: #FFF;
+      word-spacing: 2px;
+      text-decoration: none;
+      padding: 5px 15px 5px 25px;
+      position: relative;
+      left: 20px;
+      top: -37px;
+      text-align: center;
+      -moz-transform-origin: 0 0;
+      -moz-transform: rotate(45deg);
+      -moz-box-shadow: 1px 1px 5px 1px #666;
+      -webkit-transform-origin: 0 0;
+      -webkit-transform: rotate(45deg);
+      -webkit-box-shadow: 1px 1px 5px 1px #666;
+      -ms-transform-origin: 0 0;
+      -ms-transform: rotate(45deg);
+      -ms-box-shadow: 1px 1px 5px 1px #666;
+      transform-origin: 0 0;
+      transform: rotate(45deg);
+      box-shadow: 1px 1px 5px 1px #666;
+      background-image: linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+      background-image: -o-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+      background-image: -moz-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+      background-image: -webkit-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+      background-image: -ms-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+      background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.03, #000000), color-stop(0.05, #666666), color-stop(0.07, #000000), color-stop(0.93, #000000), color-stop(0.95, #666666), color-stop(0.97, #000000));
+    }
   </style>
   <!-- UNDER CONSTRUNCTION END -->
 

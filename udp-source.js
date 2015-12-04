@@ -6,9 +6,10 @@
 var flightData = [],
   dateIndex = 0;
 var fs = require("fs");
-var data = fs.readFileSync('./testFlightData.txt', 'utf8');
-console.log(data);
+var data = fs.readFileSync('./testFlightData2.txt', 'utf8');
+
 flightData = data.split("\n");
+
 // TEST FLIGHT DATA - END
 
 var PORT = 33333;
@@ -21,9 +22,9 @@ var time = 0,
   interval = 1000;
 
 function broadcastMessage() {
-  var rawMessage = flightData[dateIndex];
+  var rawMessage = flightData[dateIndex].replace(/;/ig, "");
   flightData[dateIndex].split(",").map(function(e) {
-    return (parseFloat(e)+(Math.random()-Math.random())/10).toString();
+    return (parseFloat(e)).toString();
   }).join(",");
   console.log(dateIndex, rawMessage);
   var message = new Buffer(rawMessage);
