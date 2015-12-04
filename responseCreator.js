@@ -1,6 +1,6 @@
 module.exports =function(simulatorData) {
-  var dataMap = ["id", "country", "city", "type", "sim", "lat", "long", "alt", "color"];
-  simulatorData = (typeof simulatorData === "undefined") ? "1,Denmark,Aarhus,F-35,1,56.369814,10.312042,100,100.50.40;2,Denmark,Aarhus,F-35,1,57.369814,10.712042,100,10.150.40" : simulatorData;
+  var dataMap = ["id", "country", "city", "label", "type", "lat", "long", "alt", "color"];
+  simulatorData = (typeof simulatorData === "undefined") ? "1,France,Bordeaux,ABUS1 - F35,1,0,0,0,0.255.0;1,France,Bordeaux,ABUS1 - F35,1,0,0,0,0.255.0" : simulatorData;
   function createTemplate(dataformat) {
     var result = "";
     dataformat.map(function(param) {
