@@ -28,7 +28,7 @@ module.exports =function(simulatorData) {
     } catch (e) {
       console.log(e.message + ": " + JSON.stringify(simulatorData));
     } finally {
-
+      console.log(simulatorData);
     }
   }
   return (parseSimulatorData(simulatorData, responseTemplate));

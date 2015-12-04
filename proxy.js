@@ -13,8 +13,6 @@ var dgram = require('dgram'),
 var http = require('http');
 var responseCreator = require('./responseCreator.js');
 
-console.log(responseCreator);
-
 http.createServer(function(req, res) {
   res.writeHead(200, {
     'Content-Type': 'application/json',
@@ -35,8 +33,7 @@ server.on('listening', function() {
 
 server.on('message', function(message, remote) {
   latestData = message.toString();
-  console.log(responseCreator(latestData));
-
+  console.log(latestData);
 });
 
 server.bind(PORT, HOST);
