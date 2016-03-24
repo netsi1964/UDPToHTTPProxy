@@ -4,7 +4,7 @@
   "description": "An app which will fetch UDP data and exposes it on HTTP",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node proxy.js & node server.js & node udp-source.js "
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,9 @@
   "homepage": "https://github.com/netsi1964/UDPToHTTPProxy#readme",
   "dependencies": {
     "lsof": "^0.1.0"
+  },
+  "devDependencies": {
+    "express": "4.13.4",
+    "open": "0.0.5"
   }
 }

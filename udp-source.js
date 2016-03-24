@@ -6,7 +6,7 @@
 var flightData = [],
   dateIndex = 0;
 var fs = require("fs");
-var data = fs.readFileSync('./testFlightData2.txt', 'utf8');
+var data = fs.readFileSync('./testFlightData.txt', 'utf8');
 
 flightData = data.split("\n");
 

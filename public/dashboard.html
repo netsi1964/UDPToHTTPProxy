@@ -144,7 +144,7 @@
 
             for (var plane = 0; plane < planes.length; plane++) {
               currentSimulator = planes[plane];
-console.log(currentSimulator)
+              console.log(plane, currentSimulator)
 
               if (currentSimulator.id === "") {
                 console.log("Seems that data is not valid", currentSimulator);
@@ -296,35 +296,35 @@ console.log(currentSimulator)
 
         //
         // var boxText = document.createElement("div");
-    		// boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;";
-    		// boxText.innerHTML = "City Hall, Sechelt<br>British Columbia<br>Canada";
+        // boxText.style.cssText = "border: 1px solid black; margin-top: 8px; background: yellow; padding: 5px;";
+        // boxText.innerHTML = "City Hall, Sechelt<br>British Columbia<br>Canada";
         //
-    		// var myOptions = {
-    		// 	 content: boxText
-    		// 	,disableAutoPan: false
-    		// 	,maxWidth: 0
-    		// 	,pixelOffset: new google.maps.Size(-140, 0)
-    		// 	,zIndex: null
-    		// 	,boxStyle: {
-    		// 	  background: "url('tipbox.gif') no-repeat"
-    		// 	  ,opacity: 0.75
-    		// 	  ,width: "280px"
-    		// 	 }
-    		// 	,closeBoxMargin: "10px 2px 2px 2px"
-    		// 	,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
-    		// 	,infoBoxClearance: new google.maps.Size(1, 1)
-    		// 	,isHidden: false
-    		// 	,pane: "floatPane"
-    		// 	,enableEventPropagation: false
-    		// };
+        // var myOptions = {
+        // 	 content: boxText
+        // 	,disableAutoPan: false
+        // 	,maxWidth: 0
+        // 	,pixelOffset: new google.maps.Size(-140, 0)
+        // 	,zIndex: null
+        // 	,boxStyle: {
+        // 	  background: "url('tipbox.gif') no-repeat"
+        // 	  ,opacity: 0.75
+        // 	  ,width: "280px"
+        // 	 }
+        // 	,closeBoxMargin: "10px 2px 2px 2px"
+        // 	,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+        // 	,infoBoxClearance: new google.maps.Size(1, 1)
+        // 	,isHidden: false
+        // 	,pane: "floatPane"
+        // 	,enableEventPropagation: false
+        // };
         //
-    		// google.maps.event.addListener(marker, "click", function (e) {
-    		// 	ib.open(theMap, this);
-    		// });
+        // google.maps.event.addListener(marker, "click", function (e) {
+        // 	ib.open(theMap, this);
+        // });
         //
-    		// var ib = new InfoBox(myOptions);
+        // var ib = new InfoBox(myOptions);
         //
-    		// ib.open(theMap, marker);
+        // ib.open(theMap, marker);
       });
 
     }

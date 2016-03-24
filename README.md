@@ -8,6 +8,8 @@ An app which will fetch UDP data and exposes it on HTTP
 * [Google Maps Marker options](https://developers.google.com/maps/documentation/javascript/reference#MarkerOptions)
 * [Tornado SVG](https://da.wikipedia.org/wiki/Panavia_Tornado#/media/File:Panavia_Tornado_IDS.svg)
 
+# Running
+Run `npm test` from terminal
 
 ## Internal file format (master path)
 ```
